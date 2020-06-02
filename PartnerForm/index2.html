@@ -31,7 +31,8 @@
 <body>
     <div id="mysticky-wrap">
         <div id="mysticky-nav" style="top: -60px;">
-            <header class="minimal-header effect-two clr" id="site-header" itemtype="http://schema.org/WPHeader" itemscope="itemscope" data-height="60">
+            <header class="minimal-header effect-two clr" id="site-header" itemtype="http://schema.org/WPHeader"
+                itemscope="itemscope" data-height="60">
                 <div class="clr container" id="site-header-inner">
                     <div class="clr" id="site-logo" itemtype="http://schema.org/Brand" itemscope="">
                         <div class="clr" id="site-logo-inner">
@@ -163,18 +164,31 @@
 
                                     }),
 
-                                    success: function () { },
-                                    dataType: "json",
-                                    contentType: "application/json"
+                                    success: function (data) {
+                                        if (data.success == true) {
+                                            alert('success');
+                                        }
+                                        else {
+                                            alert('fail');
+                                        }
+                                        console.log(data);
+                                    }
                                 });
-
-
-                                alert("END");
-
                             }
 
                             function myFunction() {
                                 alert("The form was submitted");
+                            }
+
+                            function phonenumber(inputtxt) {
+                                var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                                if (inputtxt.value.match(phoneno)) {
+                                    return true;
+                                }
+                                else {
+                                    alert("False number");
+                                    return false;
+                                }
                             }
                         </script>
                     </form>
@@ -190,8 +204,8 @@
     <script src="vendor/datepicker/moment.min.js"></script>
     <script src="vendor/datepicker/daterangepicker.js"></script>
     <!--Add JS   -->
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="jquery.serializejson.js"></script>
+    <!-- <script type="text/javascript" src="vendor/jquery/jquery.js"></script> -->
+    <script type="text/javascript" src="js/jquery.serializejson.js"></script>
 
 
 
