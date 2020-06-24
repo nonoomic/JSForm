@@ -406,15 +406,15 @@
                                     contentType: "application/json",
                                     success: function (data) {
 
-                                        popUpSuccess(5000, true);
+                                        popUpSuccess(500, true);
                                         console.log("Success");
                                         console.log(data);
-                                        location.href='https://ginkgosoft.co.th/';
+                                        //location.href='https://ginkgosoft.co.th/';
                                         
                                     },
                                     error: function (data) {
                                         //alert("ระบบขัดข้องโปรดลองใหม่อีกครั้ง.");
-                                        popUpSuccess(5000, false);
+                                        popUpSuccess(500, false);
                                         console.log("Error");
                                         console.log(data);
 
